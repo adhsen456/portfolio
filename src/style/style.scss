@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;800;900&display=swap');
+$font: Lexend, sans-serif;
+// $background: #fefeff;
+$background: #1a1a1d;
+$fontColor: #c3073f;
+$contentBackground: #4e4e50;
+
+.app {
+    display: flex;
+    font-family: $font;
+    // height: 100vh;
+    width: 100%;
+    .container{
+        // background-color: $background;
+        width: 100%;
+        
+        // Navbar
+        .navbar {
+            z-index: 4;
+            position: sticky;
+            top: 0;
+            // background-color: $fontColor;
+            // background-color: #689775;
+            background-color: $background;
+            // background-color: #379683;
+            .container {
+                display: flex;
+                justify-content: space-between;
+                // background-color: #6a8d73;
+                // font-family: $font;
+                padding: 10px 0px 10px 0px;
+                // border-bottom: 5px solid #6f2232;
+                border-bottom: 5px solid #ff4330;
+                
+                .logo {
+                    font-size: 30px;
+                    color: #df4938;
+                    // background-color: $fontColor;
+                    font-weight: 900;
+                    // padding: 10px;
+                    border: 3px solid $background;
+                    align-items: center;
+                    margin-left: 20px;
+                    border-radius: 8px;
+                }
+                .links {
+                    display: flex;
+                    gap: 40px;
+                    align-items: center;
+                    .link {
+                        text-decoration: none;
+                        color: #df4938;
+                        // border-radius: 8px;
+                        padding: 10px;
+                        font-weight: 700;
+                        font-size: 15px;
+                        &:hover {
+                            background-color: $background;
+                            border-bottom: 2px solid #df4938;
+                            color: #df4938;
+                        }
+                        &:focus {
+                            background-color: $fontColor;
+                            border: #ffffff;
+                            color: $background;
+                        }
+                    }
+                }
+            }
+        }
+
+        //HomePage
+        .home {
+            background-color: $background;
+
+            .title {
+                display: flex;
+                font-size: 40px;
+                justify-content: center;
+                padding: 20px;
+                font-weight: 700;
+                color: #df4938;
+            }
+            .posts {
+                // margin-top: 50px;
+                display: flex;
+                flex-direction: column;
+                gap: 50px;
+                padding: 30px;
+                
+                .post {
+                    // background-color: $contentBackground;
+                    display: flex;
+                    border-bottom: 3px solid white;
+                    gap: 100px;
+                    padding: 20px 20px 50px 20px;
+                    // border-radius: 8px;
+
+                    &:nth-child(2n+1){
+                        flex-direction: row-reverse;
+                    }
+                }
+
+                .img {
+                    flex: 2;
+                    position: relative;
+                    z-index: 0;
+                    &::after{
+                        content: "";
+                        width: 100%;
+                        background-color: #a33327;
+                        position: absolute;
+                        top: 20px;
+                        left: -20px;
+                        height: 100%;
+                        z-index: -1;
+                    }
+
+                    img {
+                        width: 100%;
+                        max-height: 400px;
+                        object-fit: cover;
+                    }
+                }
+
+                .content {
+                    flex: 3;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    gap: 10px;
+                    a{
+                        color: #ff4330;
+                        text-decoration: none;
+                        // color: #8ee4af;
+                    } 
+                    h1{
+                        font-size: 25px;
+                    }
+
+                    p{
+                        font-size: 16px;
+                        color: #e6e5e1;
+                        text-align: justify;
+                    }
+
+                    button {
+                        border-color: #689775;
+                        border-style: double;
+                        // color: $fontColor;
+                        color: #689775;
+                        width: max-content;
+                        background-color: $background;
+                        padding: 10px;
+                        cursor: pointer;
+                        font-size: 15px;
+                        border-radius: 8px;
+                        &:hover{
+                            // background-color: $fontColor
+                            background-color: #689775;
+                            color: $background;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        //Footer
+        footer{
+            margin-top: 100px;
+            background-color: $fontColor;
+        }
+    }
+}
