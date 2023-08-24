@@ -1,9 +1,10 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
-import posts from '../data/posts';
-import webDeka from '../data/web-deka.png';
+import { Link } from 'react-router-dom';
+import useFetch from '../data/populatePortfolios';
 
 function HomePage() {
+  const posts = useFetch();
+  console.log(posts);
   return (
     <div className="home">
       <div className="title">PORTFOLIO LIST</div>
@@ -11,14 +12,14 @@ function HomePage() {
         {posts.map((post) => (
           <div className="post" key={post.id}>
             <div className="img">
-              <img src={webDeka} alt={post.id} />
+              <img src={post.img} alt={post.id} />
             </div>
             <div className="content">
-              <a href="/">
+              <Link to={`/portfolio/${post.id}`}>
                 <h1>{post.title}</h1>
-              </a>
+              </Link>
               <p>{post.desc}</p>
-              <button type="button">Read More...</button>
+              <Link to={`/portfolio/${post.id}`} className="button">Read More...</Link>
             </div>
           </div>
         ))}
