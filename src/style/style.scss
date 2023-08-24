@@ -289,7 +289,13 @@ $contentBackground: #4e4e50;
 
                         a {
                             color: #689775;
-                            
+
+                        }
+
+                        img {
+                            max-width: 100%;
+                            height: 300px;
+                            position: relative;
                         }
                     }
                 }
@@ -309,6 +315,7 @@ $contentBackground: #4e4e50;
                         display: flex;
                         flex-direction: column;
                         gap: 10px;
+                        padding-bottom: 20px;
                         .img{
                             display: flex;
                             justify-content: center;
