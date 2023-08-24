@@ -8,7 +8,7 @@ function Content({ portfolios }) {
   const { id } = useParams();
 
   const thisPortfolio = portfolios.find((portfolio) => portfolio.id == id);
-  const otherPortfolios = portfolios.filter((portfolio) => portfolio.id !== id, 10);
+  const otherPortfolios = portfolios.filter((portfolio) => portfolio.id != id);
 
   return (
     <div className="content">
