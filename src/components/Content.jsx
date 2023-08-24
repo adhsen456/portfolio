@@ -1,38 +1,55 @@
 // import axios from 'axios';
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import useFetch from '../data/populatePortfolios';
+import parse from 'html-react-parser';
+import PropTypes, { shape } from 'prop-types';
 
-function Content() {
-  const posts = useFetch();
+function Content({ portfolios }) {
   const { id } = useParams();
-  console.log(posts);
 
-  const posting = posts.find((post) => post.id === id);
-  const otherPosts = posts.filter((post) => post.id !== id);
-  console.log(posting);
+  const thisPortfolio = portfolios.find((portfolio) => portfolio.id == id);
+  const otherPortfolios = portfolios.filter((portfolio) => portfolio.id !== id, 10);
+
   return (
     <div className="content">
       <div className="container">
+        {thisPortfolio
+        && (
         <div className="main">
-          <img src={posting.img} alt="" />
-          <span className="title">{posting.title}</span>
-          <span className="desc">{posting.desc}</span>
+          <img src={thisPortfolio.img} alt="" />
+          <span className="title">{thisPortfolio.title}</span>
+          <span className="desc">{parse(thisPortfolio.content)}</span>
         </div>
+        )}
+        {otherPortfolios
+        && (
         <div className="side">
-          <span>Other Portfolio</span>
-          {otherPosts.map((post) => (
-            <div className="other" key={post.id}>
+          <span>OTHER PORTFOLIO</span>
+          {otherPortfolios.map((portfolio) => (
+            <div className="other" key={portfolio.id}>
               <div className="img">
-                <img src={post.img} alt="" />
+                <img src={portfolio.img} alt="" />
               </div>
-              <Link replace to={`/portfolio/${post.id}`} className="title">{post.title}</Link>
+              <Link replace to={`/portfolio/${portfolio.id}`} className="title">{portfolio.title}</Link>
             </div>
           ))}
         </div>
+        )}
       </div>
     </div>
   );
 }
+
+const portfolioShape = {
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+};
+
+Content.propTypes = {
+  portfolios: PropTypes.arrayOf(shape(portfolioShape)).isRequired,
+};
 
 export default Content;

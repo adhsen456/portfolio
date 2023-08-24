@@ -21,7 +21,7 @@ function HeroPage() {
           <a href="https://linkedin.com/in/adhamsf" target="_blank" type="button" className="download" rel="noreferrer">
             <FaLinkedinIn />
             {' '}
-            Go to my LinkedIn Page
+            Visit my LinkedIn Page
           </a>
           <Link to="/portfolio" className="portfolio">
             See my Portfolio

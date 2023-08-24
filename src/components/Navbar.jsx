@@ -15,7 +15,7 @@ function Navbar() {
         <Link to="/" className="logo">Adham Satria Firmansyah</Link>
         <div className="links">
           {navLinks.map((nav) => (
-            <Link className="link" to={nav.link}>{nav.name}</Link>
+            <Link className="link" to={nav.link} key={nav.name}>{nav.name}</Link>
           ))}
         </div>
       </div>

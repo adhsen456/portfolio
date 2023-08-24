@@ -1,25 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useFetch from '../data/populatePortfolios';
+import PropTypes, { shape } from 'prop-types';
 
-function HomePage() {
-  const posts = useFetch();
-  console.log(posts);
+function PortfolioList({ portfolios }) {
   return (
     <div className="home">
       <div className="title">PORTFOLIO LIST</div>
       <div className="posts">
-        {posts.map((post) => (
-          <div className="post" key={post.id}>
+        {portfolios && portfolios.map((portfolio) => (
+          <div className="post" key={portfolio.id}>
             <div className="img">
-              <img src={post.img} alt={post.id} />
+              <img src={portfolio.img} alt={portfolio.id} />
             </div>
             <div className="content">
-              <Link to={`/portfolio/${post.id}`}>
-                <h1>{post.title}</h1>
+              <Link to={`/portfolio/${portfolio.id}`}>
+                <h1>{portfolio.title}</h1>
               </Link>
-              <p>{post.desc}</p>
-              <Link to={`/portfolio/${post.id}`} className="button">Read More...</Link>
+              <p>{portfolio.description}</p>
+              <Link to={`/portfolio/${portfolio.id}`} className="button">Read More...</Link>
             </div>
           </div>
         ))}
@@ -28,4 +26,15 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+const portfolioShape = {
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+};
+
+PortfolioList.propTypes = {
+  portfolios: PropTypes.arrayOf(shape(portfolioShape)).isRequired,
+};
+
+export default PortfolioList;
