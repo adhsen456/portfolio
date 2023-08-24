@@ -23,7 +23,7 @@ function HeroPage() {
             {' '}
             Visit my LinkedIn Page
           </a>
-          <Link to="/portfolio" className="portfolio">
+          <Link to="/list" className="portfolio">
             See my Portfolio
             {' '}
             <FaArrowRight />

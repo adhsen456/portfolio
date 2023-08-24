@@ -28,11 +28,11 @@ function Content({ portfolios }) {
           {otherPortfolios.map((portfolio) => (
             <div className="other" key={portfolio.id}>
               <div className="img">
-                <Link replace to={`/portfolio/${portfolio.id}`}>
+                <Link replace to={`/list/${portfolio.id}`}>
                   <img src={portfolio.img} alt="" />
                 </Link>
               </div>
-              <Link replace to={`/portfolio/${portfolio.id}`} className="title">{portfolio.title}</Link>
+              <Link replace to={`/list/${portfolio.id}`} className="title">{portfolio.title}</Link>
             </div>
           ))}
         </div>
