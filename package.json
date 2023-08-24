@@ -9,10 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@vitejs/plugin-react": "^4.0.4",
     "axios": "^1.4.0",
-    "express": "^4.18.2",
     "html-react-parser": "^4.2.1",
-    "mysql": "^2.18.1",
-    "nodemon": "^3.0.1",
     "prop-types": "^15.8.1",
     "quill-image-resize-module-react": "^3.0.0",
     "react": "^18.2.0",
@@ -28,10 +25,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "try": "nodemon ./api/index.jsx",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -b gh-page -d dist"
+    "deploy": "gh-pages -b gh-pages -d dist"
   },
   "eslintConfig": {
     "extends": [

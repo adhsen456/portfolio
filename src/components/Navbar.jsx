@@ -3,19 +3,17 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   const navLinks = [
-    { name: 'HOME', link: '/', current: false },
-    { name: 'PORTFOLIO', link: '/portfolio', current: false },
-    { name: 'ABOUT ME', link: '/about', current: false },
-    { name: 'CONTACT ME', link: '/contact', current: false },
+    { name: 'HOME', link: '/', parent: null },
+    { name: 'PORTFOLIO', link: '/portfolio', parent: '/portfolio' },
+    { name: 'CONTACT ME', link: '/contact', parent: '/contact' },
   ];
-
   return (
     <div className="navbar">
       <div className="container">
         <Link to="/" className="logo">Adham Satria Firmansyah</Link>
         <div className="links">
           {navLinks.map((nav) => (
-            <Link className="link" to={nav.link} key={nav.name}>{nav.name}</Link>
+            <Link className={window.location.pathname.includes(nav.parent) ? 'clicked' : 'link'} to={nav.link} key={nav.name}>{nav.name}</Link>
           ))}
         </div>
       </div>

@@ -10,7 +10,9 @@ function PortfolioList({ portfolios }) {
         {portfolios && portfolios.map((portfolio) => (
           <div className="post" key={portfolio.id}>
             <div className="img">
-              <img src={portfolio.img} alt={portfolio.id} />
+              <Link to={`/portfolio/${portfolio.id}`}>
+                <img src={portfolio.img} alt={portfolio.id} />
+              </Link>
             </div>
             <div className="content">
               <Link to={`/portfolio/${portfolio.id}`}>
