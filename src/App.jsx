@@ -4,7 +4,7 @@ import HeroPage from './routes/HeroPage';
 import PortfolioPage from './routes/PortfolioPage';
 import ContentPage from './routes/ContentPage';
 import Contact from './routes/Contact';
-import TextInput from './components/TextInput';
+// import TextInput from './components/TextInput';
 
 import './style/style.scss';
 
@@ -17,7 +17,7 @@ function App() {
           <Route path="/list" element={<PortfolioPage />} />
           <Route path="/list/:id" element={<ContentPage />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/write" element={<TextInput />} />
+          {/* <Route path="/write" element={<TextInput />} /> */}
         </Routes>
       </div>
     </div>
