@@ -2,8 +2,6 @@
 $font: Lexend, sans-serif;
 // $background: #fefeff;
 $background: #1a1a1d;
-$fontColor: #c3073f;
-$contentBackground: #4e4e50;
 
 .app {
     display: flex;
@@ -111,7 +109,9 @@ $contentBackground: #4e4e50;
             // background-color: #379683;
             .container {
                 display: flex;
-                justify-content: space-between;
+                // justify-content: space-between;
+                flex-direction: row;
+                gap: 40%;
                 // background-color: #6a8d73;
                 // font-family: $font;
                 padding: 10px 0px 10px 0px;
@@ -140,7 +140,7 @@ $contentBackground: #4e4e50;
                         border-bottom: 2px solid #689775;
                         padding: 10px;
                         font-weight: 700;
-                        font-size: 17px;
+                        font-size: 15px;
                         background-color: transparent;
                     }
                     .link {
@@ -201,7 +201,7 @@ $contentBackground: #4e4e50;
                         max-width: 100%;
                         height: auto;
                         object-fit: cover;
-                        border: 4px double #ff4330;
+                        border: 4px double #df4938;
                         &:hover{
                             border: 4px double #689775;
                             cursor: pointer;
@@ -216,7 +216,7 @@ $contentBackground: #4e4e50;
                     justify-content: space-between;
                     gap: 10px;
                     a{
-                        color: #ff4330;
+                        color: #df4938;
                         text-decoration: none;
                     } 
                     h1{
@@ -302,6 +302,8 @@ $contentBackground: #4e4e50;
                     }
                 }
                 .side {
+                    position: sticky;
+                    top: 0;
                     flex: 1;
                     display: flex;
                     flex-direction: column;
@@ -320,10 +322,14 @@ $contentBackground: #4e4e50;
                         padding-bottom: 20px;
                         .img{
                             display: flex;
+                            // justify-self: center;
                             justify-content: center;
+                            a {
+                                text-align: center;
+                            }
                             img{
                                 width: 200px;
-                                justify-content: center;
+                                // justify-content: center;
                                 max-width: 70%;
                                 height: auto;
                                 border: 2px solid #ff4330;
@@ -349,10 +355,166 @@ $contentBackground: #4e4e50;
             }
         }
 
+        //Contact Me
+        .contact {
+            background-image: url("../data/assets/noise-texture-100x100.png");
+            display: flex;
+            // flex-direction: row;
+            text-align: center;
+            flex-direction: column;
+            background-color: $background;
+            width: 100%;
+            height: 90vh;
+            justify-content: center;
+            gap: 100px;
+            .title{
+                font-size: 60px;
+                color: #df4938;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-self:inherit;
+            }
+            .links {
+                display: flex;
+                flex-direction: row;
+                height: 50px;
+                // justify-content: center;
+                align-self: center;
+                gap: 50px;
+            }
+            .link{
+                background-color: transparent;
+                align-self: center;
+                border: 1px solid #689775;
+                color: #689775;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 10px;
+                padding: 10px;
+                text-align: center;
+                font-size: 30px;
+                font-weight: 300;
+                text-decoration: none;
+                // padding: 20px;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+            .Email{
+                &:hover{
+                    color: #1a1a1d;
+                    background-color:#2262ac
+                }
+            }
+            .LinkedIn {
+                &:hover{
+                    color: #e6e5e1;
+                    background-color:#0A66C2
+                }
+            }
+            .WhatsApp {
+                &:hover {
+                    color: #1a1a1d;
+                    background-color: #0DC242;
+                }
+            }
+            .Github {
+                &:hover {
+                    color: #e6e5e1;
+                    background-color: #1a1a1d;
+                }
+            }
+        }
+
         //Footer
         footer{
-            height: 100px;
+            height: 50px;
             background-color: #df4938;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+            .reach {
+                text-align: center;
+                color: #e6e5e1;
+                font-size: 20px;
+            }
+            .logos{
+                align-self: center;
+                display: flex;
+                flex-direction: row;
+                gap: 100px;
+                
+                .logo {
+                    display: flex;
+                    flex-direction: row;
+                    text-align: center;
+                    gap: 5px;
+                    align-items: center;
+                    a {
+                        text-decoration: none;
+                        color: black;
+                        &:hover{
+                            color: #e6e5e1;
+                        }
+                    }
+                }
+            }
         }
+
+        // LOADING
+        .loading {
+            background-image: url("../data/assets/noise-texture-100x100.png");
+            display: flex;
+            background-color: $background;
+            width: 100%;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+
+            span {
+                font-size: 30px;
+                color: #e6e5e1;
+            }
+            
+            .progress {
+                position: relative;
+                height: 10px;
+                width: 20%;
+                border: 10px solid #ff4330;
+                border-radius: 15px;
+
+                .color{
+                    position: absolute;
+                    background-color: #ffffff;
+                    width: 0px;
+                    height: 10px;
+                    border-radius: 15px;
+                    animation: progres 3.5s infinite linear;    
+                }
+            }
+            @keyframes progres{
+                0%{
+                  width: 0%;
+                }
+                25%{
+                    width: 50%;
+                }
+                50%{
+                    width: 75%;
+                }
+                75%{
+                    width: 85%;
+                }
+                100%{
+                    width: 100%;
+                }
+            };
+        }
+
     }
 }

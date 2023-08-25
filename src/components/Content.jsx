@@ -3,6 +3,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import parse from 'html-react-parser';
 import PropTypes, { shape } from 'prop-types';
+import Loading from './Loading';
 
 function Content({ portfolios }) {
   const { id } = useParams();
@@ -10,6 +11,7 @@ function Content({ portfolios }) {
   const thisPortfolio = portfolios.find((portfolio) => portfolio.id == id);
   const otherPortfolios = portfolios.filter((portfolio) => portfolio.id != id);
 
+  if (portfolios.length < 1) return <Loading />;
   return (
     <div className="content">
       <div className="container">

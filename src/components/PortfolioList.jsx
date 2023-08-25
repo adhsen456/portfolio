@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes, { shape } from 'prop-types';
+import Loading from './Loading';
 
 function PortfolioList({ portfolios }) {
+  if (portfolios.length < 1) return <Loading />;
   return (
     <div className="home">
       <div className="title">PORTFOLIO LIST</div>
