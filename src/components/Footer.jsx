@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  FaEnvelope, FaLinkedinIn, FaWhatsapp, FaGithub,
+  FaEnvelope, FaLinkedinIn, FaGithub,
 } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
@@ -11,9 +11,6 @@ function Footer() {
     },
     {
       name: 'LinkedIn', content: 'Adham Satria Firmansyah', logo: <FaLinkedinIn />, link: 'https://linkedin.com/in/adhamsf',
-    },
-    {
-      name: 'WhatsApp', content: '+62 89668236692', logo: <FaWhatsapp />, link: 'https://wa.me/6289668236692',
     },
     {
       name: 'Github', content: 'adhsen456', logo: <FaGithub />, link: 'https://github.com/adhsen456',
