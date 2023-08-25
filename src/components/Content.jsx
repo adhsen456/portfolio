@@ -18,8 +18,8 @@ function Content({ portfolios }) {
         {thisPortfolio
         && (
         <div className="main">
-          <img src={thisPortfolio.img} alt="" />
           <span className="title">{thisPortfolio.title}</span>
+          <img src={thisPortfolio.img} alt="" />
           <span className="desc">{parse(thisPortfolio.content)}</span>
         </div>
         )}
