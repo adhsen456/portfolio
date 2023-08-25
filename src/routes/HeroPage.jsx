@@ -13,11 +13,17 @@ function HeroPage() {
         <div className="name">{content.name}</div>
         <div className="desc">{content.desc}</div>
         <div className="buttons">
-          <button type="button" className="download">
+          <a
+            href="https://drive.google.com/file/d/1Vx7dFc_iOoHX7U-VXcIFmVAQAxtHqdtN/view?usp=sharing"
+            target="_blank"
+            type="button"
+            className="download"
+            rel="noreferrer"
+          >
             <FaArrowDown />
             {' '}
             Download My CV
-          </button>
+          </a>
           <a href="https://linkedin.com/in/adhamsf" target="_blank" type="button" className="download" rel="noreferrer">
             <FaLinkedinIn />
             {' '}
