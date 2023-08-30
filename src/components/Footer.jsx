@@ -4,18 +4,18 @@ import {
 } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
+const informations = [
+  {
+    name: 'Email', content: 'adhsen.firman@gmail.com', logo: <FaEnvelope />, link: 'mailto:adhsen.firman@gmail.com',
+  },
+  {
+    name: 'LinkedIn', content: 'Adham Satria Firmansyah', logo: <FaLinkedinIn />, link: 'https://linkedin.com/in/adhamsf',
+  },
+  {
+    name: 'Github', content: 'adhsen456', logo: <FaGithub />, link: 'https://github.com/adhsen456',
+  },
+];
 function Footer() {
-  const informations = [
-    {
-      name: 'Email', content: 'adhsen.firman@gmail.com', logo: <FaEnvelope />, link: 'mailto:adhsen.firman@gmail.com',
-    },
-    {
-      name: 'LinkedIn', content: 'Adham Satria Firmansyah', logo: <FaLinkedinIn />, link: 'https://linkedin.com/in/adhamsf',
-    },
-    {
-      name: 'Github', content: 'adhsen456', logo: <FaGithub />, link: 'https://github.com/adhsen456',
-    },
-  ];
   return (
     <footer>
       <div className="reach">Reach Me Up Here</div>
@@ -32,5 +32,7 @@ function Footer() {
     </footer>
   );
 }
+
+export { informations };
 
 export default Footer;
